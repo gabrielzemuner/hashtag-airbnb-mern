@@ -42,4 +42,34 @@ Criar arquivo .gitignore
 
 ```
 git add .
+git commit -m "mensagem"
 ```
+
+Após o commit, os arquivos no repositório do github `hashtag-airbnb-mern` ainda não estão atualizados, pois o repositório local não está conectado com o repositório remoto. Para conectar local com remoto, seguir comandos abaixo:
+
+Obs: na primeira tentativa de executar os comandos abaixo, necessário um passo anterior -> configuração do usuário
+
+```
+git config --global user.name "Gabriel Zemuner"
+git config --global user.email "gabrielzemuner@live.com"
+```
+
+Após configuração do usuário, executar comandos abaixo:
+
+```
+git remote add origin https://github.com/gabrielzemuner/hashtag-airbnb-mern.git
+git branch -M main
+git push -u origin main // depois podemos usar apenas o comando git push
+```
+
+### Tratamento de responsividade dos componentes
+
+### Instalação react-router
+
+```
+npm i react-router
+```
+
+#### Configuração react-router
+
+![alt text](image-2.png)
