@@ -5,7 +5,7 @@ import {
 } from "@heroicons/react/16/solid";
 import { Link } from "react-router";
 
-const Header = () => {
+const Header = ({ user }) => {
   return (
     <header className="shadow-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-8">
@@ -31,12 +31,13 @@ const Header = () => {
         </Link>
 
         <Link
-          to="/login"
+          to={user ? "/account" : "/login"}
           className="flex items-center gap-2 rounded-full border border-gray-300 px-4 py-2 shadow-md"
         >
           <Bars3Icon className="size-5 text-gray-600" />
           <UserCircleIcon className="size-8 text-gray-600" />
-          <p className="max-w-20 truncate sm:max-w-32">Gabriel Zemuner</p>
+
+          {user && <p className="max-w-20 truncate sm:max-w-32">{user.name}</p>}
         </Link>
       </div>
     </header>

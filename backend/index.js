@@ -1,12 +1,14 @@
 import "dotenv/config";
 import express from "express";
-import UserRoutes from './domains/users/routes.js'
+import UserRoutes from "./domains/users/routes.js";
+import cors from "cors";
 
 const app = express();
 const { PORT } = process.env;
 
 app.use(express.json()); // middleware
-app.use("/users", UserRoutes)
+app.use(cors());
+app.use("/users", UserRoutes);
 
 app.get("/", (req, res) => {
   res.json("Olá mundo");

@@ -253,14 +253,42 @@ Importar bcryptjs no arquivo `index.js`
 
 Criado pasta domains/users -> arquivos: `model.js`, `routes.js`
 
+# Aula 4
+
+## Configurações frontend/backend
+
+Configuração rota login no arquivo `routes.js`
+
+Configurações de estado (useState) no arquivo `Login.jsx`
+
+Instalação axios dentro da pasta frontend para conectar frontend com backend
+
+```
+npm i axios
+```
+
+Definir URL base do axios no arquivo `App.jsx` -> configurar essa URL em um arquivo `.env`
+
+![alt text](image-18.png)
+
+![alt text](image-19.png)
 
 
+Ao tentar submeter formulário da página `Login.jsx` via axios, erro de CORS:
 
+- Resolução: instalar middleware cors no projeto backend (PASTA BACKEND)
 
+```
+npm i cors
+```
 
+- Configurar cors no arquivo `index.js` do backend
 
+![alt text](image-20.png)
 
+Configurações arquivos `App.jsx`, `Header.jsx` e `Login.jsx`
 
+Criar arquivo `Register.jsx` através da cópia do arquivo `Login.jsx`
 
 
 
