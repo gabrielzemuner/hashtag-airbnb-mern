@@ -290,6 +290,63 @@ Configurações arquivos `App.jsx`, `Header.jsx` e `Login.jsx`
 
 Criar arquivo `Register.jsx` através da cópia do arquivo `Login.jsx`
 
+# Aula 5
+
+## Login persistente -> cookies
+
+Cookies -> dados armazenados no navegador
+
+Instalar dependência jwt (jsonwebtoken) -> obs: professor instalou na pasta raiz ao invés de instalar dentro da pasta backend
+
+```
+npm i jsonwebtoken
+```
+
+Configurar rota post login para armazenar cookie
+
+![alt text](image-21.png)
+
+Após efetuar login, foi criado um cookie no navegador, porém esse cookie ainda não está disponível pra uso
+
+![alt text](image-22.png)
+
+![alt text](image-23.png)
+
+Necessário configurar no frontend conforme abaixo:
+
+![alt text](image-24.png)
+
+Necessário configurar no backend conforme abaixo:
+
+![alt text](image-26.png)
+
+
+Necessário também ajustar o cookie no método post
+
+![alt text](image-25.png)
+
+Após essas configurações, ao logar no sistema, será criado o cookie, conforme imagem
+
+![alt text](image-27.png)
+
+Instalação cookie parser para acessar informações dos cookies no arquivo `routes.js`
+
+```
+npm i cookie-parser 
+``` 
+
+![alt text](image-28.png)
+
+Agora, no arquivo `routes.js` o token será acessado com sucesso
+
+![alt text](image-29.png)
+
+Lógica abaixo criada para persistir dados do usuário logado, caso exista usuário logado
+
+![alt text](image-30.png)
+
+Criar página `Register.jsx`
+
 
 
 # Diferença export default function e export function

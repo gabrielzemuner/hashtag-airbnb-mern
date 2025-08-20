@@ -11,21 +11,23 @@ export default function Register({ setUser }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //   if (email && password) {
-    //     try {
-    //       const { data: userDoc } = await axios.post("/users/login", {
-    //         email,
-    //         password,
-    //       });
+      if (email && password && name) {
+        try {
+          const { data: userDoc } = await axios.post("/users", {
+            name,
+            email,
+            password,
+          });
 
-    //       setUser(userDoc);
-    //       setRedirect(true);
-    //     } catch (error) {
-    //       alert(`Erro ao logar: ${error.response.data}`);
-    //     }
-    //   } else {
-    //     alert("Você precisa preencher o e-mail e a senha!");
-    //   }
+          // Lógica abaixo cria o usuário, carrega os dados logando o usuário e redireciona para a página raiz ("/")
+          setUser(userDoc);
+          setRedirect(true);
+        } catch (error) {
+          alert(`Erro ao cadastrar usuário: ${error.response.data}`);
+        }
+      } else {
+        alert("Você precisa preencher todos os campos!");
+      }
   };
 
   if (redirect) return <Navigate to="/" />;
